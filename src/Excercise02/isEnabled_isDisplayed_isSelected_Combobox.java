@@ -19,13 +19,14 @@ public class isEnabled_isDisplayed_isSelected_Combobox {
 	@BeforeClass
 	public void beforeClass() {
 		driver= new ChromeDriver();
+		driver.manage().window().maximize();
 //		driver= new FirefoxDriver();
 		
 	}
 	
 	@Test
-	/*public void Testcase01() {
-		driver.get("https://daominhdam.github.io/basic-form/");
+	public void Testcase01() {
+	driver.get("https://daominhdam.github.io/basic-form/");
 		
 	WebElement element1 = driver.findElement(By.xpath("//input[@id='password']"));
 	Assert.assertFalse(element1.isEnabled());
@@ -33,9 +34,10 @@ public class isEnabled_isDisplayed_isSelected_Combobox {
 	
 	System.out.println("Place holder: "+ checkplaceholder);
 	
-	}*/
+	}
 	
-	/*public void Testcase02() throws InterruptedException {
+	@Test
+	public void Testcase02() throws InterruptedException {
 		driver.get("http://demo.guru99.com/test/radio.html");
 		 
 		WebElement radiobutton= driver.findElement(By.xpath("//input[@id='vfb-7-1']"));
@@ -43,9 +45,15 @@ public class isEnabled_isDisplayed_isSelected_Combobox {
 		Thread.sleep(2000);
 		radiobutton.click();
 		Assert.assertTrue(radiobutton.isSelected());
+		
+		WebElement checkbox = driver.findElement(By.xpath("//input[@id='vfb-6-2']"));
+		Assert.assertFalse(checkbox.isSelected());
+		Thread.sleep(2000);
+		checkbox.click();
+		Assert.assertTrue(checkbox.isSelected());
 	}
-	*/
 	
+	@Test
 		public void Testcase03()
 		{
 		 driver.get("https://www.facebook.com/");
@@ -73,6 +81,6 @@ public class isEnabled_isDisplayed_isSelected_Combobox {
 	
 	@AfterClass
 	public void afterClass() {
-		
+//		driver.quit();
 	}
 }
