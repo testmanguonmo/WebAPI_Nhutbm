@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Excercise02.isEnabled_isDisplayed_isSelected_Combobox">
+      <class name="Excercise01.ButtonRadiobuttonCheckboxCombobox">
         <methods>
+          <include name="Testcase04"/>
           <include name="beforeClass"/>
-          <include name="Testcase03"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- Excercise02.isEnabled_isDisplayed_isSelected_Combobox -->
+      </class> <!-- Excercise01.ButtonRadiobuttonCheckboxCombobox -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

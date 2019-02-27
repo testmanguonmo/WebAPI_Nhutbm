@@ -1,5 +1,7 @@
 package Excercise01;
 
+import java.util.Random;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,12 +17,14 @@ public class ButtonRadiobuttonCheckboxCombobox {
 	public void beforeClass() throws InterruptedException {
 	
 		driver = new ChromeDriver();
-		driver.get("http://live.guru99.com/");
-		Thread.sleep(5000);
+		driver.manage().window().maximize();
+		
 		
 	}
 	@Test
-/*	public void Testcase01() throws InterruptedException {
+	public void Testcase01() throws InterruptedException {
+		driver.get("http://live.guru99.com/");
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[@class='footer']//a[contains(text(),'My Account')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@id='send2']")).click();
@@ -31,9 +35,12 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		String errorpassword= driver.findElement(By.xpath("//div[@id='advice-required-entry-pass']")).getText();
 		Assert.assertEquals("This is a required field.", errorpassword);
 
-	}*/
+	}
 	
-/*	public void Testcase02() throws InterruptedException {
+	@Test
+	public void Testcase02() throws InterruptedException {
+		driver.get("http://live.guru99.com/");
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[@class='footer']//a[contains(text(),'My Account')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("123434234@12312.123123");
@@ -41,10 +48,12 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		Thread.sleep(2000);
 		String emailvalid= driver.findElement(By.xpath("//div[@id='advice-validate-email-email']")).getText();
 		Assert.assertEquals("Please enter a valid email address. For example johndoe@domain.com.", emailvalid);
-	}*/
+	}
 	
-	
-/*	public void Testcase03() throws InterruptedException {
+	@Test
+	public void Testcase03() throws InterruptedException {
+		driver.get("http://live.guru99.com/");
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[@class='footer']//a[contains(text(),'My Account')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("automation@gmail.com");
@@ -55,9 +64,23 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		String passwordvalid= driver.findElement(By.xpath("//div[@id='advice-validate-password-pass']")).getText();
 		Assert.assertEquals("Please enter 6 or more characters without leading or trailing spaces.", passwordvalid);
 	
-	}*/
+	}
 	
+	public static String randomEmail() {
+		
+		Random rand= new Random();
+		int n= rand.nextInt(99999);
+		return String.valueOf(n);
+		
+		
+	}
+	
+	@Test
 	public void Testcase04() throws InterruptedException {
+		
+		String email= "automation"+randomEmail()+ "@gmail.com";
+		driver.get("http://live.guru99.com/");
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[@class='footer']//a[contains(text(),'My Account')]")).click();
 		Thread.sleep(2000);
 		
@@ -69,7 +92,7 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		
 		driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys("Bui");
 
-		driver.findElement(By.xpath("//input[@id='email_address']")).sendKeys("nhut16@gmail.com");
+		driver.findElement(By.xpath("//input[@id='email_address']")).sendKeys(email);
 
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456abc");
 		
@@ -101,7 +124,7 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		driver.findElement(By.xpath("//div[@class='footer']//a[contains(text(),'My Account')]")).click();
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("nhut16@gmail.com");
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
 		
 		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("123456abc");
 		
@@ -110,7 +133,9 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		
 		String url= driver.getCurrentUrl();
 		
-		System.out.println("Present URL: "+url);
+		Assert.assertEquals("http://live.guru99.com/index.php/customer/account/index/", url);
+//		System.out.println("Present URL: "+url);
+		
 		
 
 	
@@ -121,7 +146,7 @@ public class ButtonRadiobuttonCheckboxCombobox {
 	@AfterClass
 	public void afterClass()
 	{
-//	driver.quit();	
+	driver.quit();	
 	}
 	
 	
