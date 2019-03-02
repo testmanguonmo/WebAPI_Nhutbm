@@ -16,6 +16,7 @@ public class ButtonRadiobuttonCheckboxCombobox {
 	@BeforeClass
 	public void beforeClass() throws InterruptedException {
 	
+		System.setProperty("webdriver.chromedriver.exe",".\\driver\\chrome.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
