@@ -109,7 +109,7 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		String message = driver.findElement(By.xpath("//span[contains(text(),'Thank you for registering with Main Website Store.')]")).getText();
 		
 		Assert.assertEquals("Thank you for registering with Main Website Store.", message);
-//		System.out.println("My dashboard: "+message);
+		System.out.println("My dashboard: "+message);
 		
 		
 		Thread.sleep(2000);
@@ -124,7 +124,7 @@ public class ButtonRadiobuttonCheckboxCombobox {
 		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath("//div[@class='footer']//a[contains(text(),'My Account')]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
 		

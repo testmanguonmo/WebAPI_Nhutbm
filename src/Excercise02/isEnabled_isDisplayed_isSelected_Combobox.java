@@ -76,6 +76,6 @@ public class isEnabled_isDisplayed_isSelected_Combobox {
 
 	@AfterClass
 	public void afterClass() {
-//		driver.quit();
+		driver.quit();
 	}
 }
