@@ -66,7 +66,12 @@ public class Alert {
 		
 		driver.switchTo().alert().dismiss();
 		
-		String cancelmess= driver.switchTo().alert().getText();
+		String cancelmess= driver.findElement(By.xpath("//p[@id='result']")).getText();
+		
+		System.out.println(cancelmess);
+		
+		Assert.assertEquals("You clicked: Cancel", cancelmess);
+		
 		
 		
 		
